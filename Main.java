@@ -45,5 +45,26 @@ public class Main {
 
         System.out.println("\nRemaining Queue after processing 3 requests:");
         regQueue.printQueue();
+
+        // ---------------------------------------------------------
+        System.out.println("\n=== TASK 3: COURSE DROP STACK TEST ===");
+        DropStack dropStack = new DropStack();
+
+        // Adding 5 course-drop records
+        dropStack.push(new DropRecord(106, "SNEZ-305: Cryo Archon Diplomacy", baseTime + 200));
+        dropStack.push(new DropRecord(108, "COMBAT-109: Foul Legacy Tactics", baseTime + 250));
+        dropStack.push(new DropRecord(111, "ECON-401: Northland Bank Finance", baseTime + 310));
+        dropStack.push(new DropRecord(102, "HEARTH-104: Covert Espionage", baseTime + 380));
+        dropStack.push(new DropRecord(104, "MECH-210: Ruin Guard Engineering", baseTime + 420));
+
+        System.out.println("\nTop record before popping (peek): " + dropStack.peek());
+
+        // Processing (popping) 2 records
+        System.out.println("\nPopping 2 drop records...");
+        dropStack.pop();
+        dropStack.pop();
+
+        System.out.println("\nRemaining DropStack after popping 2 records:");
+        dropStack.printStack();
     }
 }
